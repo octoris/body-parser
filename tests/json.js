@@ -24,10 +24,37 @@ function createServer (opts = {}) {
 }
 
 
-test('Basic', t => {
+// test('Basic', t => {
+//   request(createServer())
+//     .post('/')
+//     .set('Content-Type', 'application/json')
+//     .send('{ "user": "frank" }')
+//     .expect(200)
+//     .end((err, res) => {
+//       t.error(err, 'No Error')
+//       t.same(res.body, { user: 'frank' })
+//       t.end()
+//     })
+// })
+
+// test('With Options', t => {
+//   request(createServer({ strict: true }))
+//     .post('/')
+//     .set('Content-Type', 'application/json')
+//     .send('{ "user": "frank" }')
+//     .expect(200)
+//     .end((err, res) => {
+//       t.error(err, 'No Error')
+//       t.same(res.body, { user: 'frank' })
+//       t.end()
+//     })
+// })
+
+test('With invalid encoding', t => {
   request(createServer())
     .post('/')
-    .set('Content-Type', 'application/json')
+    .type('json')
+    .set('content-encoding', 'invalid')
     .send('{ "user": "frank" }')
     .expect(200)
     .end((err, res) => {
@@ -37,28 +64,28 @@ test('Basic', t => {
     })
 })
 
-test('With Options', t => {
-  request(createServer({ strict: true }))
-    .post('/')
-    .set('Content-Type', 'application/json')
-    .send('Not JSON!')
-    .expect(400)
-    .end((err, res) => {
-      t.error(err, 'No Error')
-      t.same(res.text, 'Invalid JSON')
-      t.end()
-    })
-})
+// test('With Invlaid content encoded', t => {
+//   request(createServer({ strict: true }))
+//     .post('/')
+//     .set('Content-Type', 'application/json')
+//     .send('Not JSON!')
+//     .expect(400)
+//     .end((err, res) => {
+//       t.error(err, 'No Error')
+//       t.same(res.text, 'Invalid JSON')
+//       t.end()
+//     })
+// })
 
-test('Strict Mode Off', t => {
-  request(createServer({ strict: false }))
-    .get('/')
-    .set('Content-Type', 'application/json')
-    .send('{ "user": "frank" }')
-    .expect(200)
-    .end((err, res) => {
-      t.error(err, 'No Error')
-      t.same(res.body, { user: 'frank' })
-      t.end()
-    })
-})
+// test('Strict Mode Off', t => {
+//   request(createServer({ strict: false }))
+//     .get('/')
+//     .set('Content-Type', 'application/json')
+//     .send('{ "user": "frank" }')
+//     .expect(200)
+//     .end((err, res) => {
+//       t.error(err, 'No Error')
+//       t.same(res.body, { user: 'frank' })
+//       t.end()
+//     })
+// })

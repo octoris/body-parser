@@ -19,6 +19,10 @@ function json (opts) {
       opts.limit = opts.limit || '1mb'
 
       function parse (str) {
+        if (!strict) {
+          return str ? JSON.parse(str) : str
+        }
+
         if (!str) {
           return {}
         }
@@ -30,11 +34,13 @@ function json (opts) {
         return JSON.parse(str)
       }
 
+      console.log(opts)
       return raw(inflate(ctx.request), opts)
         .then(str => {
           ctx.body = parse(str)
           return resolve(ctx)
         })
+        .catch(err => reject({ err, ctx }))
     })
   }
 }
