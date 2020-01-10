@@ -1,0 +1,35 @@
+{
+  "name": "@octoris/body-parser",
+  "version": "0.1.0",
+  "description": "A body parser middleware for octoris",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape tests/index.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/octoris/body-parser.git"
+  },
+  "keywords": [
+    "body-parser",
+    "json",
+    "raw",
+    "urlencoded",
+    "octoris"
+  ],
+  "author": "Dustin Hershman <dustinh17@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/octoris/body-parser/issues"
+  },
+  "homepage": "https://github.com/octoris/body-parser#readme",
+  "dependencies": {
+    "inflation": "^2.0.0",
+    "raw-body": "^2.4.1"
+  },
+  "devDependencies": {
+    "supertest": "^4.0.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.13.0"
+  }
+}
