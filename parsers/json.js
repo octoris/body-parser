@@ -24,7 +24,7 @@ function json (opts) {
         }
 
         if (strict && !strictJSONReg.test(str)) {
-          return reject(new Error('Invalid JSON'))
+          return reject({ err: new Error('Invalid JSON'), ctx })
         }
 
         return JSON.parse(str)
