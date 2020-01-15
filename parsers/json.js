@@ -28,19 +28,18 @@ function json (opts) {
         }
 
         if (strict && !strictJSONReg.test(str)) {
-          return reject({ err: new Error('Invalid JSON'), ctx })
+          return reject(new Error('Invalid JSON'))
         }
 
         return JSON.parse(str)
       }
 
-      console.log(opts)
       return raw(inflate(ctx.request), opts)
         .then(str => {
           ctx.body = parse(str)
           return resolve(ctx)
         })
-        .catch(err => reject({ err, ctx }))
+        .catch(reject)
     })
   }
 }

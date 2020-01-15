@@ -25,6 +25,7 @@
   "homepage": "https://github.com/octoris/body-parser#readme",
   "dependencies": {
     "inflation": "^2.0.0",
+    "qs": "^6.9.1",
     "raw-body": "^2.4.1"
   },
   "devDependencies": {
