@@ -1,10 +1,13 @@
 {
   "name": "@octoris/body-parser",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A body parser middleware for octoris",
   "main": "index.js",
   "scripts": {
-    "test": "tape tests/*.js | tap-spec"
+    "test": "tape tests/*.js | tap-spec",
+    "ac": "git add . && npx git-cz",
+    "commit": "npx git-cz",
+    "release": "npx standard-version"
   },
   "repository": {
     "type": "git",
