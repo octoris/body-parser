@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.2
+
+- Dependency Updates for audit
+
 ## v0.1.1
 
 - Fixed minimist dependency
