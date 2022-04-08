@@ -4,7 +4,7 @@
   "description": "A body parser middleware for octoris",
   "main": "index.js",
   "scripts": {
-    "test": "tape tests/*.js | tap-spec",
+    "test": "tape tests/*.js | tap-on",
     "ac": "git add . && npx git-cz",
     "commit": "npx git-cz",
     "release": "npx standard-version"
@@ -28,12 +28,12 @@
   "homepage": "https://github.com/octoris/body-parser#readme",
   "dependencies": {
     "inflation": "^2.0.0",
-    "qs": "^6.9.1",
-    "raw-body": "^2.4.1"
+    "qs": "^6.10.3",
+    "raw-body": "^2.5.1"
   },
   "devDependencies": {
-    "supertest": "^4.0.2",
-    "tap-spec": "^5.0.0",
-    "tape": "^4.13.0"
+    "supertest": "^6.2.2",
+    "tap-on": "0.3.1",
+    "tape": "^5.5.3"
   }
 }
