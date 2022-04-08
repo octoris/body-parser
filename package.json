@@ -18,7 +18,11 @@
     "json",
     "raw",
     "urlencoded",
-    "octoris"
+    "octoris",
+    "middleware",
+    "parser",
+    "body",
+    "http"
   ],
   "author": "Dustin Hershman <dustinh17@gmail.com>",
   "license": "MIT",
